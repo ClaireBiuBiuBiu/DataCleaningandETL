@@ -1,3 +1,6 @@
+#To make work more successful, adding generator and list comprehention for future use
+
+
 def addition(n):
     return n+n
 numbers = (1,2,3,4)
