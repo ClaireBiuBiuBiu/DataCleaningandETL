@@ -1,0 +1,24 @@
+from exmail.mime.multipart import MIMEultipart
+from email.mime.text import MIMEText
+import smtplib
+
+
+def send_success_gmail():
+try:
+  sender = "Lalala!yuyu.com" #here you can type anything make up any email
+  receiver = "aa@outlook.com, cla@outlook.com"
+  message = MIMEMultipart()
+  message['From'] = sender
+  message['To'] = receiver
+  subject = 'Data updates successfully'
+  message['Subject'] = subject
+  content = 'This is an automated email sent from' + datetime.now().strftime("%Y/%m/%d/%H:%M:%S")
+  message.attach(MIMEText(content))
+  session = smtplib.SMTP('smtprelay.zzzzz.com',9999) # here decided by website and their number
+  text = message.as_string()
+  session.sendmail(sender,receiver.split(","),text)
+  session.quit()
+  print('Mail sent')
+except:
+  print('Something is wrong')
+  print(traceback.format_exc())
