@@ -1,7 +1,7 @@
-from exmail.mime.multipart import MIMEultipart
+from email.mime.multipart import MIMEultipart
 from email.mime.text import MIMEText
 import smtplib
-
+from datetime import datetime
 
 def send_success_gmail():
 try:
